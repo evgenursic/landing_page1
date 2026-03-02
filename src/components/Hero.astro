@@ -1,0 +1,47 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+---
+
+<section id="home" class="hero-surface section-shell relative overflow-hidden pt-20">
+  <div class="pointer-events-none absolute -right-20 top-20 h-64 w-64 rounded-full bg-accent/20 blur-3xl"></div>
+  <div class="pointer-events-none absolute -left-12 bottom-8 h-56 w-56 rounded-full bg-emerald-500/10 blur-3xl"></div>
+
+  <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+    <div class="reveal">
+      <p class="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">Portfolio Showcase</p>
+      <h1 class="max-w-2xl text-balance text-4xl font-semibold leading-tight text-copy sm:text-5xl lg:text-6xl">
+        Minimal builds.
+        <br />
+        Real-world results.
+      </h1>
+      <p class="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
+        I ship focused digital products fast, with clean interfaces and practical automation that reduces busywork
+        and increases delivery speed.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="#projects" class="cta-primary">View Projects</a>
+        <a href="#contact" class="cta-secondary">Contact</a>
+      </div>
+    </div>
+
+    <div class="reveal relative">
+      <div class="mx-auto w-full max-w-[20rem] sm:max-w-sm">
+        <div class="device-frame shadow-soft">
+          <div class="device-speaker"></div>
+          <img
+            src="/hero-shot.png"
+            alt="Device preview placeholder for featured product screenshot"
+            loading="eager"
+            class="h-full w-full object-cover"
+          />
+          <div class="device-home"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute right-4 top-1/2 hidden -translate-y-1/2 lg:block">
+    <SocialLinks orientation="vertical" />
+  </div>
+</section>

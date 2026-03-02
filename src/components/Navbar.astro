@@ -1,0 +1,74 @@
+<header class="sticky top-0 z-50 border-b border-card-border/70 bg-bg/75 backdrop-blur-xl">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="flex items-center justify-between py-3">
+      <a href="#home" class="text-lg font-semibold tracking-tight text-copy">
+        <span class="text-accent">&lt;/&gt;</span> &lt;YOUR_BRAND&gt;
+      </a>
+
+      <div class="flex items-center gap-2">
+        <nav aria-label="Primary navigation" class="hidden items-center gap-1 md:flex">
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <button
+          id="theme-toggle"
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-card-border bg-card text-copy transition hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+          aria-label="Toggle color theme"
+          aria-pressed="true"
+        >
+          <svg id="theme-icon" viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true" fill="currentColor">
+            <path
+              d="M12 3a.75.75 0 0 1 .75.75v1.5a.75.75 0 1 1-1.5 0v-1.5A.75.75 0 0 1 12 3Zm0 14.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 1 1-1.5 0V18a.75.75 0 0 1 .75-.75Zm9-5.25a.75.75 0 0 1-.75.75h-1.5a.75.75 0 1 1 0-1.5h1.5A.75.75 0 0 1 21 12ZM5.25 12a.75.75 0 0 1-.75.75H3a.75.75 0 1 1 0-1.5h1.5a.75.75 0 0 1 .75.75Zm12.432 5.182a.75.75 0 0 1 0 1.06l-1.061 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.061 0ZM8.5 8.5a.75.75 0 0 1 0 1.06L7.439 10.62a.75.75 0 1 1-1.06-1.06L7.44 8.5a.75.75 0 0 1 1.06 0Zm8.121-2.122a.75.75 0 0 1 1.06 0L18.742 7.44a.75.75 0 0 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.06ZM7.44 15.5a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 1 1-1.06 1.061l-1.06-1.06a.75.75 0 0 1 0-1.061ZM12 7.25a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5Z"
+            ></path>
+          </svg>
+        </button>
+
+        <a
+          href="#contact"
+          class="inline-flex items-center rounded-full border border-accent bg-accent px-4 py-2 text-sm font-semibold text-black transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+        >
+          Hire me
+        </a>
+      </div>
+    </div>
+
+    <nav aria-label="Mobile navigation" class="flex items-center gap-2 pb-3 md:hidden">
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const toggle = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+
+    if (!toggle || !icon) return;
+
+    const sunIcon =
+      '<path d="M12 3a.75.75 0 0 1 .75.75v1.5a.75.75 0 1 1-1.5 0v-1.5A.75.75 0 0 1 12 3Zm0 14.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 1 1-1.5 0V18a.75.75 0 0 1 .75-.75Zm9-5.25a.75.75 0 0 1-.75.75h-1.5a.75.75 0 1 1 0-1.5h1.5A.75.75 0 0 1 21 12ZM5.25 12a.75.75 0 0 1-.75.75H3a.75.75 0 1 1 0-1.5h1.5a.75.75 0 0 1 .75.75Zm12.432 5.182a.75.75 0 0 1 0 1.06l-1.061 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.061 0ZM8.5 8.5a.75.75 0 0 1 0 1.06L7.439 10.62a.75.75 0 1 1-1.06-1.06L7.44 8.5a.75.75 0 0 1 1.06 0Zm8.121-2.122a.75.75 0 0 1 1.06 0L18.742 7.44a.75.75 0 0 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.06ZM7.44 15.5a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 1 1-1.06 1.061l-1.06-1.06a.75.75 0 0 1 0-1.061ZM12 7.25a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5Z"></path>';
+    const moonIcon =
+      '<path d="M10.34 3.22a.75.75 0 0 1 .95.92 8.25 8.25 0 0 0 8.57 10.49.75.75 0 0 1 .63 1.25A9.75 9.75 0 1 1 9.08 2.6a.75.75 0 0 1 1.26.62ZM8.76 5.2a8.25 8.25 0 1 0 8.52 10.61 9.76 9.76 0 0 1-8.52-10.6Z"></path>';
+
+    const applyIcon = (theme) => {
+      icon.innerHTML = theme === "dark" ? sunIcon : moonIcon;
+      toggle.setAttribute("aria-pressed", String(theme === "dark"));
+    };
+
+    const current = root.dataset.theme === "light" ? "light" : "dark";
+    applyIcon(current);
+
+    toggle.addEventListener("click", () => {
+      const next = root.dataset.theme === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      localStorage.setItem("theme", next);
+      applyIcon(next);
+    });
+  })();
+</script>

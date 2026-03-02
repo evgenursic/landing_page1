@@ -1,0 +1,25 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Projects from "../components/Projects.astro";
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { projects, projectTags } from "../data/projects";
+---
+
+<BaseLayout
+  title="<YOUR_BRAND> | Portfolio"
+  description="Minimal, high-performing web products built for real-world impact."
+  ogImage="/hero-shot.png"
+>
+  <Navbar />
+  <main id="content">
+    <Hero />
+    <Projects projects={projects} tags={projectTags} />
+    <About />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

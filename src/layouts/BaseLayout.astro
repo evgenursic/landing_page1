@@ -1,0 +1,66 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = "<YOUR_BRAND> | Minimal builds. Real-world results.",
+  description = "I design and build clean, high-performing digital products with fast iteration cycles and production-ready quality.",
+  ogImage = "/hero-shot.png"
+} = Astro.props;
+
+const canonical = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site).toString()
+  : Astro.url.toString();
+
+const resolvedOgImage = Astro.site ? new URL(ogImage, Astro.site).toString() : ogImage;
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline>
+      (() => {
+        try {
+          const storedTheme = localStorage.getItem("theme");
+          const preferredTheme =
+            storedTheme === "light" || storedTheme === "dark" ? storedTheme : "dark";
+          document.documentElement.dataset.theme = preferredTheme;
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a120d" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={resolvedOgImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={resolvedOgImage} />
+  </head>
+  <body class="bg-bg text-copy antialiased">
+    <a
+      href="#content"
+      class="skip-link fixed left-4 top-4 z-[100] rounded-md bg-accent px-3 py-2 text-sm font-semibold text-black"
+    >
+      Skip to content
+    </a>
+    <slot />
+  </body>
+</html>
