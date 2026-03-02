@@ -2,32 +2,68 @@
 import SocialLinks from "./SocialLinks.astro";
 ---
 
-<section id="home" class="hero-surface section-shell relative overflow-hidden pt-20">
-  <div class="pointer-events-none absolute -right-20 top-20 h-64 w-64 rounded-full bg-accent/20 blur-3xl"></div>
-  <div class="pointer-events-none absolute -left-12 bottom-8 h-56 w-56 rounded-full bg-emerald-500/10 blur-3xl"></div>
+<section id="home" class="hero-surface section-shell relative overflow-hidden pt-16 sm:pt-20">
+  <div class="pointer-events-none absolute -right-28 top-8 h-80 w-80 rounded-full bg-accent/20 blur-3xl"></div>
+  <div class="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl"></div>
 
-  <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+  <div class="hero-grid grid items-start gap-12 lg:grid-cols-[1.03fr_0.97fr]">
     <div class="reveal">
-      <p class="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">Portfolio Showcase</p>
-      <h1 class="max-w-2xl text-balance text-4xl font-semibold leading-tight text-copy sm:text-5xl lg:text-6xl">
-        Minimal builds.
-        <br />
-        Real-world results.
-      </h1>
-      <p class="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
-        I ship focused digital products fast, with clean interfaces and practical automation that reduces busywork
-        and increases delivery speed.
+      <p class="hero-kicker mb-5 inline-flex items-center gap-2 rounded-full border border-card-border bg-card/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+        <span class="h-2 w-2 rounded-full bg-accent" aria-hidden="true"></span>
+        Open for new projects
       </p>
+      <h1 class="max-w-2xl text-balance text-4xl font-semibold leading-[1.08] text-copy sm:text-5xl lg:text-6xl">
+        Clear product interfaces.
+        <br />
+        Faster launch velocity.
+      </h1>
+      <p class="mt-5 max-w-xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
+        I design and build focused web products that users understand instantly, teams can maintain easily, and
+        businesses can ship with confidence.
+      </p>
+
+      <ul class="mt-6 grid max-w-xl gap-2 text-sm text-copy sm:grid-cols-3" aria-label="Core strengths">
+        <li class="hero-value-pill">Fast kickoff</li>
+        <li class="hero-value-pill">Clean handoff</li>
+        <li class="hero-value-pill">Performance-first</li>
+      </ul>
 
       <div class="mt-8 flex flex-wrap items-center gap-3">
         <a href="#projects" class="cta-primary">View Projects</a>
         <a href="#contact" class="cta-secondary">Contact</a>
+        <p class="text-sm text-muted">Typical MVP timeline: 2-4 weeks</p>
+      </div>
+
+      <div class="hero-proof mt-8 grid gap-3 sm:grid-cols-3" aria-label="Delivery highlights">
+        <div class="hero-proof-card">
+          <p class="hero-proof-metric">48h</p>
+          <p class="hero-proof-label">Project kickoff</p>
+        </div>
+        <div class="hero-proof-card">
+          <p class="hero-proof-metric">90+</p>
+          <p class="hero-proof-label">Lighthouse target</p>
+        </div>
+        <div class="hero-proof-card">
+          <p class="hero-proof-metric">12+</p>
+          <p class="hero-proof-label">Shipped builds</p>
+        </div>
+      </div>
+
+      <div class="mt-6 lg:hidden">
+        <SocialLinks />
       </div>
     </div>
 
-    <div class="reveal relative">
-      <div class="mx-auto w-full max-w-[20rem] sm:max-w-sm">
-        <div class="device-frame shadow-soft">
+    <div class="reveal relative pb-6 lg:pb-0">
+      <div class="hero-panel shadow-soft">
+        <div class="hero-panel-head">
+          <div class="hero-dots" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <p class="text-xs font-medium tracking-[0.1em] text-muted uppercase">Product Preview</p>
+        </div>
+
+        <div class="device-frame mt-4">
           <div class="device-speaker"></div>
           <img
             src="/hero-shot.png"
@@ -37,6 +73,26 @@ import SocialLinks from "./SocialLinks.astro";
           />
           <div class="device-home"></div>
         </div>
+
+        <div class="mt-4 grid grid-cols-3 gap-2">
+          <div class="hero-metric-box">
+            <p class="hero-metric-value">A11y</p>
+            <p class="hero-metric-label">AA-ready</p>
+          </div>
+          <div class="hero-metric-box">
+            <p class="hero-metric-value">SEO</p>
+            <p class="hero-metric-label">Structured</p>
+          </div>
+          <div class="hero-metric-box">
+            <p class="hero-metric-value">SSG</p>
+            <p class="hero-metric-label">Fast load</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="floating-note -right-2 top-4 sm:right-2">
+        <p class="text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-accent">Automation</p>
+        <p class="mt-1 text-xs text-copy">Manual work reduced through scripted workflows.</p>
       </div>
     </div>
   </div>
